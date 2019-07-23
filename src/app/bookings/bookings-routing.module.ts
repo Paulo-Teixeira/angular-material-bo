@@ -1,13 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { BookingComponent } from './booking/booking.component';
+import { BookingsComponent } from './bookings.component';
+import { BookingToolbarComponent } from './booking-toolbar/booking-toolbar.component';
+import { BookingFormComponent } from './booking-form/booking-form.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: BookingComponent
+    component: BookingsComponent
+  },
+  {
+    path: 'toolbar',
+    component: BookingToolbarComponent
+  },
+  {
+    path: 'form',
+    component: BookingFormComponent
   }
 ];
 
