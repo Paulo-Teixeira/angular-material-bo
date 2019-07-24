@@ -1,21 +1,23 @@
-.toolbar-layout {
-  display: grid;
-  grid-template-columns: auto 1fr repeat(4, auto);
-  width: 100%;
-}
+.booking-toolbar {
+  overflow-x: hidden;
 
-.toolbar-label {
-  margin-left: 6px;
-}
-
-.toolbar-meta {
-  margin-right: 10px;
-
-  &__label {
-    margin-right: 6px;
+  &__spacer {
+    flex: 1 1 auto;
   }
 
-  &__value {
+  &__button-label {
+    margin-left: 6px;
+  }
+
+  &__meta {
+    margin-right: 10px;
+  }
+
+  &__meta-label {
+    margin-left: 6px;
+  }
+
+  &__meta-value {
     font-weight: 700;
   }
 }
