@@ -24,7 +24,7 @@ export class BookingFormComponent implements OnInit {
     if (this.bookingsForm.valid) {
       console.log('Form submited', this.bookingsForm.value);
 
-      // Resets Material input errors after form submission
+      // Uses form directive to reset Material input errors after form submission
       formDirective.resetForm();
       
       // Sets de default value of the radio button after form reset
