@@ -1,2 +1,27 @@
-<p>booking-form works!</p>
+<form [formGroup]="bookingsForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)" novalidate class="booking-form">
 
+  <div class="booking-form__radio-group">
+    <label for="radio-group" class="booking-form__radio-label">Booking type</label>
+    <mat-radio-group aria-labelledby="radio-group" formControlName="bookingType">
+      <mat-radio-button [value]="1" class="booking-form__radio-button">Option 1</mat-radio-button>
+      <mat-radio-button [value]="2" class="booking-form__radio-button">Option 2</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <mat-form-field [hideRequiredMarker]="false" appearance="outline">
+    <mat-label>Client booker</mat-label>
+    <input matInput formControlName="clientBooker" required>
+    <mat-error>Client booker is <strong>required</strong></mat-error>
+  </mat-form-field>
+
+  <mat-form-field [hideRequiredMarker]="false" appearance="outline">
+    <mat-label>Client reference</mat-label>
+    <input matInput formControlName="clientReference" required>
+    <mat-error>Client reference is <strong>required</strong></mat-error>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" [disabled]="!bookingsForm.valid">Submit</button>
+
+  <pre>{{ bookingsForm.value | json }}</pre>
+
+</form>

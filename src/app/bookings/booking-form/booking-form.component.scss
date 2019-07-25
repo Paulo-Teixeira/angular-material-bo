@@ -1,0 +1,20 @@
+.booking-form {
+  align-items: center;
+  display: grid;
+  grid-column-gap: 48px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  padding: 48px;
+
+  &__radio-label {
+    margin-right: 16px;
+  }
+
+  &__radio-button {
+    margin-right: 16px;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

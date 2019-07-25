@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-booking-form',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingFormComponent implements OnInit {
 
+  bookingsForm: FormGroup;
+
   constructor() { }
 
   ngOnInit() {
+    this.bookingsForm = new FormGroup({
+      bookingType: new FormControl(1, Validators.required),
+      clientBooker: new FormControl('', Validators.required),
+      clientReference: new FormControl('', Validators.required),
+    });
   }
 
+  onSubmit(formDirective) {
+    if (this.bookingsForm.valid) {
+      console.log('Form submited', this.bookingsForm.value);
+
+      // Resets Material input errors after form submission
+      formDirective.resetForm();
+      
+      // Sets de default value of the radio button after form reset
+      this.bookingsForm.patchValue({ bookingType: 1 });
+    }
+  }
 }
