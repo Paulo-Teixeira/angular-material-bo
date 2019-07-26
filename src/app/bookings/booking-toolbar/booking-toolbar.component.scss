@@ -11,6 +11,10 @@
 
   &__meta {
     margin-right: 10px;
+
+    &--push-right {
+      margin-right: auto;
+    }
   }
 
   &__meta-label {
