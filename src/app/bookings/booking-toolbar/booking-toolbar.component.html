@@ -9,15 +9,15 @@
       <span class="booking-toolbar__meta-value mat-h4">Value</span>
     </div>
     
-    <button mat-button color="primary" type="button">
+    <button mat-button color="primary" type="button" [disabled]="isFormValid">
       <mat-icon aria-hidden="false">done_outline</mat-icon>
       <span class="booking-toolbar__button-label">Confirmer + OT</span>
     </button>
-    <button mat-button color="primary" type="button">
+    <button mat-button color="primary" type="button" [disabled]="isFormValid">
       <mat-icon aria-hidden="false">done_outline</mat-icon>
       <span class="booking-toolbar__button-label">Confirmer + MAD</span>
     </button>
-    <button mat-button color="primary" type="button">
+    <button mat-button color="primary" type="button" (click)="submitForm()" [disabled]="isFormValid">
       <mat-icon aria-hidden="false">done_outline</mat-icon>
       <span class="booking-toolbar__button-label">Confirmer</span>
     </button>
