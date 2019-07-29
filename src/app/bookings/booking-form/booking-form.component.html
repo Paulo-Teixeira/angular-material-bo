@@ -1,4 +1,6 @@
-<form [formGroup]="bookingsForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)" novalidate class="booking-form">
+<app-booking-toolbar (formSubmited)="onSubmit(formDirective)" [isFormValid]="!bookingsForm.valid"></app-booking-toolbar>
+
+<form [formGroup]="bookingsForm" #formDirective="ngForm" novalidate class="booking-form">
 
   <div class="booking-form__radio-group">
     <label for="radio-group" class="booking-form__radio-label">Booking type</label>
