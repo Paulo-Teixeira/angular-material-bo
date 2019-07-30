@@ -16,6 +16,7 @@ export class BookingFormComponent implements OnInit {
     this.bookingsForm = new FormGroup({
       bookingType: new FormControl(1, Validators.required),
       clientBooker: new FormControl('', Validators.required),
+      //clientBooker: new FormControl({value: '', disabled: true}, Validators.required),
       clientReference: new FormControl('', Validators.required),
     });
   }
