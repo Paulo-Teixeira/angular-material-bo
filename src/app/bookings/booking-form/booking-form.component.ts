@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-booking-form',
@@ -10,7 +12,7 @@ export class BookingFormComponent implements OnInit {
 
   bookingsForm: FormGroup;
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.bookingsForm = new FormGroup({
@@ -23,13 +25,19 @@ export class BookingFormComponent implements OnInit {
 
   onSubmit(formDirective) {
     if (this.bookingsForm.valid) {
+      const lastSubmitedBookingType: number = this.bookingsForm.value.bookingType;
+      
       console.log('Form submited', this.bookingsForm.value);
+
+      this.snackBar.open('Booking created', 'Close', {
+        duration: 4000,
+      });
 
       // Uses form directive to reset Material input errors after form submission
       formDirective.resetForm();
       
-      // Sets de default value of the radio button after form reset
-      this.bookingsForm.patchValue({ bookingType: 1 });
+      // Sets de default value of the radio button to the last value submited before form reset
+      this.bookingsForm.patchValue({bookingType: lastSubmitedBookingType});
     }
   }
 }
