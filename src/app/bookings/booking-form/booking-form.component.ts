@@ -23,7 +23,7 @@ export class BookingFormComponent implements OnInit {
     });
   }
 
-  onSubmit(formDirective) {
+  onSubmit(formDirective: any): void {
     if (this.bookingsForm.valid) {
       const lastSubmitedBookingType: number = this.bookingsForm.value.bookingType;
       
