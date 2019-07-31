@@ -5,7 +5,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
+
 
 @NgModule({
   imports: [
@@ -15,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatInputModule,
     MatRadioModule,
     MatSidenavModule,
+    MatSnackBarModule,
     MatToolbarModule
   ],
   exports: [
@@ -24,6 +27,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatInputModule,
     MatRadioModule,
     MatSidenavModule,
+    MatSnackBarModule,
     MatToolbarModule
   ]
 })
