@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormCleanerService } from 'src/app/shared/form-cleaner.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class BookingFormComponent implements OnInit {
 
   bookingsForm: FormGroup;
 
-  constructor(private snackBar: MatSnackBar) { }
+  constructor(private snackBar: MatSnackBar, private formCleaner: FormCleanerService) { }
 
   ngOnInit() {
     this.bookingsForm = new FormGroup({
@@ -27,7 +28,7 @@ export class BookingFormComponent implements OnInit {
     if (this.bookingsForm.valid) {
       const lastSubmitedBookingType: number = this.bookingsForm.value.bookingType;
       
-      console.log('Form submited', this.bookingsForm.value);
+      console.log('Form submited', this.formCleaner.trim(this.bookingsForm.value));
 
       this.snackBar.open('Booking created', 'Close', {
         duration: 4000,
