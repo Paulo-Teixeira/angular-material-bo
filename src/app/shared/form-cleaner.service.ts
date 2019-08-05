@@ -8,7 +8,7 @@ export class FormCleanerService {
 
   // Removes whitespace from text inputs in a form
   trim(formData: FormGroup): object {
-    let trimmedFormData: object = {};
+    const trimmedFormData: object = {};
 
     for (let input in formData) {
 
