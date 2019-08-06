@@ -23,6 +23,6 @@
     align-items: baseline;
     display: grid;
     grid-column-gap: 10px;
-    grid-template-columns: 1fr minmax(90px, 100px) minmax(140px, 1fr);
+    grid-template-columns: auto minmax(90px, 120px) minmax(140px, 1fr);
   }
 }
