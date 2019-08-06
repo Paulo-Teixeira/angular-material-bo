@@ -2,6 +2,7 @@
   align-items: baseline;
   display: grid;
   grid-column-gap: 48px;
+  grid-row-gap: 12px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   padding: 48px;
