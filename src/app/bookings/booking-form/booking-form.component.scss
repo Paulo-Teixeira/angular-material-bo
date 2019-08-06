@@ -19,6 +19,13 @@
     }
   }
 
+  &__input-button {
+    background-color: var(--bg-color);
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
   &__toggle-field {
     align-items: baseline;
     display: grid;
