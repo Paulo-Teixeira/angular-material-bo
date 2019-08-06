@@ -11,17 +11,82 @@
   </div>
 
   <mat-form-field [hideRequiredMarker]="false" appearance="outline">
-    <mat-label>Client booker</mat-label>
-    <input matInput formControlName="clientBooker" required>
-    <mat-error>Client booker is <strong>required</strong></mat-error>
-  </mat-form-field>
-
-  <mat-form-field [hideRequiredMarker]="false" appearance="outline">
     <mat-label>Client reference</mat-label>
     <input matInput formControlName="clientReference" required>
     <mat-error>Client reference is <strong>required</strong></mat-error>
   </mat-form-field>
 
-  <pre>{{ bookingsForm.value | json }}</pre>
+  <mat-form-field appearance="outline">
+    <mat-label>Add tag</mat-label>
+    <input matInput formControlName="tag">
+    <mat-icon matSuffix>mode_edit</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field [hideRequiredMarker]="false" appearance="outline">
+    <mat-label>Client booker</mat-label>
+    <input matInput formControlName="clientBooker" required>
+    <mat-error>Client booker is <strong>required</strong></mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Client label</mat-label>
+    <input matInput formControlName="clientLabel">
+  </mat-form-field>
+
+  <mat-form-field [hideRequiredMarker]="false" appearance="outline">
+    <mat-label>Transit label</mat-label>
+    <input matInput formControlName="transitLabel" required>
+    <mat-error>Transit label is <strong>required</strong></mat-error>
+  </mat-form-field>
+
+  <div class="booking-form__radio-group">
+    <label for="radio-group" class="booking-form__radio-label">Paiment type</label>
+    <mat-radio-group aria-labelledby="radio-group" formControlName="paimentType">
+      <mat-radio-button [value]="1" class="booking-form__radio-button">Option 1</mat-radio-button>
+      <mat-radio-button [value]="2" class="booking-form__radio-button">Option 2</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Internal reference</mat-label>
+    <input matInput formControlName="internalReference">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>External reference</mat-label>
+    <input matInput formControlName="externalReference">
+  </mat-form-field>
+
+  <div class="booking-form__toggle-field">
+    <mat-slide-toggle>Toggle A</mat-slide-toggle>
+    <mat-form-field appearance="outline">
+      <mat-label>Code 1</mat-label>
+      <input matInput formControlName="codeOne">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Code 2</mat-label>
+      <input matInput formControlName="codeTwo">
+    </mat-form-field>
+  </div>
+
+  <div class="booking-form__toggle-field">
+    <mat-slide-toggle>Toggle B</mat-slide-toggle>
+    <mat-form-field appearance="outline">
+      <mat-label>Code alpha</mat-label>
+      <input matInput formControlName="codeAlpha">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Code bravo</mat-label>
+      <input matInput formControlName="codeBravo">
+    </mat-form-field>
+  </div>
+
+  <mat-form-field [hideRequiredMarker]="false" appearance="outline">
+    <mat-label>Documents</mat-label>
+    <input matInput formControlName="documents" required>
+    <mat-error>Documents is <strong>required</strong></mat-error>
+  </mat-form-field>
 
 </form>
+
+<pre>{{ bookingsForm.value | json }}</pre>

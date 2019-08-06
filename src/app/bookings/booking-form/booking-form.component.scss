@@ -1,5 +1,5 @@
 .booking-form {
-  align-items: center;
+  align-items: baseline;
   display: grid;
   grid-column-gap: 48px;
   grid-template-columns: repeat(3, 1fr);
@@ -16,5 +16,12 @@
     &:last-child {
       margin-right: 0;
     }
+  }
+
+  &__toggle-field {
+    align-items: baseline;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: 100px 120px 1fr;
   }
 }

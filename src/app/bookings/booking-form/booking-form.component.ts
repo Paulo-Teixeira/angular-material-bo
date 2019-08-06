@@ -18,9 +18,20 @@ export class BookingFormComponent implements OnInit {
   ngOnInit() {
     this.bookingsForm = new FormGroup({
       bookingType: new FormControl(1, Validators.required),
+      clientReference: new FormControl('', Validators.required),
+      tag: new FormControl(''),
       clientBooker: new FormControl('', Validators.required),
       //clientBooker: new FormControl({value: '', disabled: true}, Validators.required),
-      clientReference: new FormControl('', Validators.required),
+      clientLabel: new FormControl(''),
+      transitLabel: new FormControl('', Validators.required),
+      paimentType: new FormControl('A', Validators.required),
+      internalReference: new FormControl(''),
+      externalReference: new FormControl(''),
+      codeOne: new FormControl(''),
+      codeTwo: new FormControl(''),
+      codeAlpha: new FormControl(''),
+      codeBravo: new FormControl(''),
+      documents: new FormControl('')
     });
   }
 
