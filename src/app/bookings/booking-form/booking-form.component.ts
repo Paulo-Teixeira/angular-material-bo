@@ -24,7 +24,7 @@ export class BookingFormComponent implements OnInit {
       //clientBooker: new FormControl({value: '', disabled: true}, Validators.required),
       clientLabel: new FormControl(''),
       transitLabel: new FormControl('', Validators.required),
-      paimentType: new FormControl('A', Validators.required),
+      paimentType: new FormControl(1, Validators.required),
       internalReference: new FormControl(''),
       externalReference: new FormControl(''),
       codeOne: new FormControl(''),
