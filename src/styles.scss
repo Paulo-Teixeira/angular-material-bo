@@ -1,5 +1,9 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+:root {
+  --bg-color: #fafafa;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
