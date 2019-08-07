@@ -13,7 +13,7 @@
   <mat-form-field [hideRequiredMarker]="false" appearance="outline">
     <mat-label>Client reference</mat-label>
     <input matInput formControlName="clientReference" required>
-    <button mat-icon-button color="primary" class="booking-form__input-button" type="button">
+    <button mat-icon-button class="booking-form__input-button" type="button">
       <mat-icon>search</mat-icon>
     </button>
     <mat-error>Client reference is <strong>required</strong></mat-error>
@@ -22,7 +22,7 @@
   <mat-form-field appearance="outline">
     <mat-label>Add tag</mat-label>
     <input matInput formControlName="tag">
-    <button mat-icon-button color="primary" class="booking-form__input-button" type="button">
+    <button mat-icon-button class="booking-form__input-button" type="button">
       <mat-icon>local_offer</mat-icon>
     </button>
   </mat-form-field>
@@ -30,7 +30,7 @@
   <mat-form-field [hideRequiredMarker]="false" appearance="outline">
     <mat-label>Client booker</mat-label>
     <input matInput formControlName="clientBooker" required>
-    <button mat-icon-button color="primary" class="booking-form__input-button" type="button">
+    <button mat-icon-button class="booking-form__input-button" type="button">
       <mat-icon>search</mat-icon>
     </button>
     <mat-error>Client booker is <strong>required</strong></mat-error>
@@ -39,7 +39,7 @@
   <mat-form-field appearance="outline">
     <mat-label>Client label</mat-label>
     <input matInput formControlName="clientLabel">
-    <button mat-icon-button color="primary" class="booking-form__input-button" type="button">
+    <button mat-icon-button class="booking-form__input-button" type="button">
       <mat-icon>person_add</mat-icon>
     </button>
   </mat-form-field>
@@ -69,7 +69,7 @@
   </mat-form-field>
 
   <div class="booking-form__toggle-field">
-    <mat-slide-toggle>ID</mat-slide-toggle>
+    <mat-slide-toggle (change)="toggleIda($event)">IDA</mat-slide-toggle>
     <mat-form-field appearance="outline">
       <mat-label>Code 1</mat-label>
       <input matInput formControlName="codeOne">
@@ -81,7 +81,7 @@
   </div>
 
   <div class="booking-form__toggle-field">
-    <mat-slide-toggle>ID</mat-slide-toggle>
+    <mat-slide-toggle (change)="toggleIdb($event)">IDB</mat-slide-toggle>
     <mat-form-field appearance="outline">
       <mat-label>Code alpha</mat-label>
       <input matInput formControlName="codeAlpha">
