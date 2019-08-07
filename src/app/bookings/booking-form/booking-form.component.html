@@ -21,10 +21,15 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Add tag</mat-label>
-    <input matInput formControlName="tag">
+    <input matInput formControlName="tag" [matAutocomplete]="auto">
     <button mat-icon-button class="booking-form__input-button" type="button">
       <mat-icon>local_offer</mat-icon>
     </button>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
 
   <mat-form-field [hideRequiredMarker]="false" appearance="outline">

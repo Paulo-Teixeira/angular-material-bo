@@ -13,6 +13,7 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
 export class BookingFormComponent implements OnInit {
 
   public bookingsForm: FormGroup;
+  public options = ['Hello', 'Fake', 'Data'];
 
   constructor(private snackBar: MatSnackBar, private formCleaner: FormCleanerService) { }
 
