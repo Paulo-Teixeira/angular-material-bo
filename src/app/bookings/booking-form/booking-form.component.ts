@@ -54,20 +54,28 @@ export class BookingFormComponent implements OnInit {
   }
 
   toggleIda(toggle: MatSlideToggle): void {
-    const siblingInputs = [this.bookingsForm.get('codeOne'), this.bookingsForm.get('codeTwo')];
+    const siblingInputs = [
+      this.bookingsForm.get('codeOne'),
+      this.bookingsForm.get('codeTwo')
+    ];
     this.toggleHelper(toggle, siblingInputs);
   }
 
   toggleIdb(toggle: MatSlideToggle): void {
-    const siblingInputs = [this.bookingsForm.get('codeAlpha'), this.bookingsForm.get('codeBravo')];
+    const siblingInputs = [
+      this.bookingsForm.get('codeAlpha'),
+      this.bookingsForm.get('codeBravo')
+    ];
     this.toggleHelper(toggle, siblingInputs);
   }
 
   private toggleHelper(toggle: MatSlideToggle, ...selectedInputs): void {
     if (toggle.checked) {
-      selectedInputs[0].forEach(input => input.enable());
+      selectedInputs[0]
+        .forEach(input => input.enable());
     } else {
-      selectedInputs[0].forEach(input => input.disable());
+      selectedInputs[0]
+        .forEach(input => input.disable());
     }
   }
 }
