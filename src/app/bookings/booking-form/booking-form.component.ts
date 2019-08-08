@@ -44,7 +44,7 @@ export class BookingFormComponent implements OnInit {
       codeTwo: new FormControl({value: '', disabled: true}),
       codeAlpha: new FormControl({value: '', disabled: true}),
       codeBravo: new FormControl({value: '', disabled: true}),
-      documents: new FormControl(''),
+      documents: new FormControl('', Validators.required),
     });
   }
 
