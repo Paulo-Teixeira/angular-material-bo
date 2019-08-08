@@ -51,6 +51,7 @@ export class BookingFormComponent implements OnInit {
   onSubmit(formDirective: any): void {
     if (this.bookingsForm.valid) {
       const lastSubmitedBookingType: number = this.bookingsForm.value.bookingType;
+      const lastSubmitedPaimentType: number = this.bookingsForm.value.paimentType;
       console.log('Form submited', this.formCleaner.trim(this.bookingsForm.value));
 
       this.snackBar.open('Booking created', 'Close', {
@@ -62,6 +63,7 @@ export class BookingFormComponent implements OnInit {
       
       // Sets de default value of the radio button to the last value submited before form reset
       this.bookingsForm.patchValue({bookingType: lastSubmitedBookingType});
+      this.bookingsForm.patchValue({paimentType: lastSubmitedPaimentType});
     }
   }
 
