@@ -48,7 +48,7 @@ export class BookingFormComponent implements OnInit {
     this.filteredOptions = this.bookingsForm.controls.tag.valueChanges
       .pipe(
         startWith(''),
-        map(value => this._filter(value = '')) // Fixes error caused after the form reset, where valueChanges calls _filter function
+        map(value => this._filter(value = '')) // Default param as empty string fixes error caused after the form reset, where valueChanges calls _filter function with undefined value
       );
   }
 
