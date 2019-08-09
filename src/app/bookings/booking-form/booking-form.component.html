@@ -21,7 +21,7 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Add tag</mat-label>
-    <input matInput formControlName="tag" [matAutocomplete]="auto">
+    <input matInput formControlName="tag" [matAutocomplete]="auto" (click)="getData()">
     <button mat-icon-button class="booking-form__input-button" type="button">
       <mat-icon>local_offer</mat-icon>
     </button>

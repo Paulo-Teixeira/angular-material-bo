@@ -15,18 +15,14 @@ import { startWith, map } from 'rxjs/operators';
 export class BookingFormComponent implements OnInit {
 
   bookingsForm: FormGroup;
-  options: string[] = ['Hello', 'Fake', 'Data'];
+  options: string[];
   filteredOptions: Observable<string[]>;
 
   constructor(private snackBar: MatSnackBar, private formCleaner: FormCleanerService) { }
 
   ngOnInit() {
+    this.options = ['Hello', 'Fake', 'Data']; // should comme from API service
     this.formInit();
-    this.filteredOptions = this.bookingsForm.controls.tag.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => this._filter(value))
-      );
   }
 
   formInit() {
@@ -46,6 +42,14 @@ export class BookingFormComponent implements OnInit {
       codeBravo: new FormControl({value: '', disabled: true}),
       documents: new FormControl('', Validators.required),
     });
+  }
+
+  getData() {
+    this.filteredOptions = this.bookingsForm.controls.tag.valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filter(value = '')) // Fixes error caused after the form reset, where valueChanges calls _filter function
+      );
   }
 
   onSubmit(formDirective: any): void {
@@ -95,7 +99,6 @@ export class BookingFormComponent implements OnInit {
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-
     return this.options
       .filter(
         option => option
@@ -103,4 +106,5 @@ export class BookingFormComponent implements OnInit {
           .includes(filterValue)
       );
   }
+  
 }
