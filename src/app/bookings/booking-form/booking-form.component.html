@@ -25,7 +25,7 @@
     <button mat-icon-button class="booking-form__input-button" type="button">
       <mat-icon>local_offer</mat-icon>
     </button>
-    <mat-autocomplete #auto="matAutocomplete">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="populateForm($event)">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
         {{option}}
       </mat-option>

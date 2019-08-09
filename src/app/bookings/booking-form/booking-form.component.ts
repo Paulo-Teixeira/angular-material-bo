@@ -106,5 +106,14 @@ export class BookingFormComponent implements OnInit {
           .includes(filterValue)
       );
   }
+
+  // Example on how to go about to auto fill other form inputs after autocomplete selection
+  populateForm(e) {
+    // TODO DRY this
+    this.bookingsForm.patchValue({clientReference: e.option.value});
+    this.bookingsForm.patchValue({clientBooker: e.option.value});
+    this.bookingsForm.patchValue({transitLabel: e.option.value});
+    this.bookingsForm.patchValue({documents: e.option.value});
+  }
   
 }
