@@ -32,7 +32,7 @@ export class BookingFormComponent implements OnInit {
       clientBooker: new FormControl('', Validators.required),
       clientLabel: new FormControl(''),
       transitLabel: new FormControl('', Validators.required),
-      paimentType: new FormControl(1, Validators.required),
+      paymentType: new FormControl(1, Validators.required),
       internalReference: new FormControl(''),
       externalReference: new FormControl(''),
       codeOne: new FormControl({value: '', disabled: true}),
@@ -57,7 +57,7 @@ export class BookingFormComponent implements OnInit {
   onSubmit(): void {
     if (this.bookingsForm.valid) {
       const lastSubmitedBookingType: number = this.bookingsForm.value.bookingType;
-      const lastSubmitedPaimentType: number = this.bookingsForm.value.paimentType;
+      const lastSubmitedPaymentType: number = this.bookingsForm.value.paymentType;
       console.log('Form submited', this._trim(this.bookingsForm.value));
 
       this.snackBar.open('Booking created', 'Close', {
@@ -68,7 +68,7 @@ export class BookingFormComponent implements OnInit {
       
       // Sets de default value of the radio button to the last value submited before form reset
       this.bookingsForm.patchValue({bookingType: lastSubmitedBookingType});
-      this.bookingsForm.patchValue({paimentType: lastSubmitedPaimentType});
+      this.bookingsForm.patchValue({paymentType: lastSubmitedPaymentType});
     }
   }
 
