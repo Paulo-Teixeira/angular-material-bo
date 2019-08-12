@@ -48,11 +48,14 @@ export class BookingFormComponent implements OnInit {
     this.filteredOptions = this.bookingsForm.controls.tag.valueChanges
       .pipe(
         startWith(''),
-        map(value => this._filter(value = '')) // Default param as empty string fixes error caused after the form reset, where valueChanges calls _filter function with undefined value
+        /* Default param as empty string fixes error caused after the form reset,
+          where valueChanges calls _filter function with undefined value
+        */
+        map(value => this._filter(value = ''))
       );
   }
 
-  onSubmit(formDirective: any): void {
+  onSubmit(): void {
     if (this.bookingsForm.valid) {
       const lastSubmitedBookingType: number = this.bookingsForm.value.bookingType;
       const lastSubmitedPaimentType: number = this.bookingsForm.value.paimentType;
@@ -62,8 +65,7 @@ export class BookingFormComponent implements OnInit {
         duration: 4000,
       });
 
-      // Uses form directive to reset Material input errors after form submission
-      formDirective.resetForm();
+      this.bookingsForm.reset();
       
       // Sets de default value of the radio button to the last value submited before form reset
       this.bookingsForm.patchValue({bookingType: lastSubmitedBookingType});
