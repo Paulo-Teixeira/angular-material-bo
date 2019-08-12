@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FormCleanerService } from 'src/app/shared/form-cleaner.service';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
@@ -18,7 +17,7 @@ export class BookingFormComponent implements OnInit {
   options: string[];
   filteredOptions: Observable<string[]>;
 
-  constructor(private snackBar: MatSnackBar, private formCleaner: FormCleanerService) { }
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.options = ['Hello', 'Fake', 'Data']; // should comme from API service
@@ -59,7 +58,7 @@ export class BookingFormComponent implements OnInit {
     if (this.bookingsForm.valid) {
       const lastSubmitedBookingType: number = this.bookingsForm.value.bookingType;
       const lastSubmitedPaimentType: number = this.bookingsForm.value.paimentType;
-      console.log('Form submited', this.formCleaner.trim(this.bookingsForm.value));
+      console.log('Form submited', this._trim(this.bookingsForm.value));
 
       this.snackBar.open('Booking created', 'Close', {
         duration: 4000,
@@ -107,6 +106,19 @@ export class BookingFormComponent implements OnInit {
           .toLowerCase()
           .includes(filterValue)
       );
+  }
+
+  private _trim(formData: FormGroup): object {
+    const trimmedFormData: object = {};
+
+    for (let input in formData) {
+      // Check for input strings only 
+      if (typeof formData[input] === 'string') {
+        trimmedFormData[input] = formData[input].trim();
+      }
+    }
+    return {...formData, ...trimmedFormData};
+    
   }
 
   // Example on how to go about to auto fill other form inputs after autocomplete selection
