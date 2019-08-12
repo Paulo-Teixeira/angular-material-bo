@@ -1,5 +1,8 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { SharedModule } from '../../shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { BookingFormComponent } from './booking-form.component';
 
@@ -10,6 +13,7 @@ describe('BookingFormComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [BookingFormComponent],
+      imports: [SharedModule, BrowserAnimationsModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
