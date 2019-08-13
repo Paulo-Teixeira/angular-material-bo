@@ -35,10 +35,10 @@ export class BookingFormComponent implements OnInit {
       paymentType: new FormControl(1, Validators.required),
       internalReference: new FormControl(''),
       externalReference: new FormControl(''),
-      codeOne: new FormControl({value: '', disabled: true}),
-      codeTwo: new FormControl({value: '', disabled: true}),
-      codeAlpha: new FormControl({value: '', disabled: true}),
-      codeBravo: new FormControl({value: '', disabled: true}),
+      codeOne: new FormControl({value: '', disabled: true}, Validators.required),
+      codeTwo: new FormControl({value: '', disabled: true}, Validators.required),
+      codeAlpha: new FormControl({value: '', disabled: true}, Validators.required),
+      codeBravo: new FormControl({value: '', disabled: true}, Validators.required),
       documents: new FormControl('', Validators.required),
     });
   }
