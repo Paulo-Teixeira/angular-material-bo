@@ -18,23 +18,21 @@ export class BookingFormComponent implements OnInit {
   options: string[];
   isClientBooking: boolean = true;
   filteredOptions: Observable<string[]>;
-  clientBookingInputs;
+  clientBookingInputs: string[] =[
+    'clientReference',
+    'clientBooker',
+    'clientLabel',
+    'transitLabel',
+    'paymentType',
+    'internalReference',
+    'documents',
+  ];
 
   constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.options = ['Hello', 'Fake', 'Data']; // should comme from API service
     this.formInit();
-
-    this.clientBookingInputs = [
-      this.bookingsForm.get('clientReference'),
-      this.bookingsForm.get('clientBooker'),
-      this.bookingsForm.get('clientLabel'),
-      this.bookingsForm.get('transitLabel'),
-      this.bookingsForm.get('paymentType'),
-      this.bookingsForm.get('internalReference'),
-      this.bookingsForm.get('documents'),
-    ];
   }
 
   formInit() {
@@ -128,7 +126,6 @@ export class BookingFormComponent implements OnInit {
       }
     }
     return {...formData, ...trimmedFormData};
-    
   }
 
   toggleInputsByTypeOfBooking(event: MatRadioChange): void {
@@ -144,11 +141,11 @@ export class BookingFormComponent implements OnInit {
   }
 
   private _disableInputsByBookingType() {
-    this.clientBookingInputs.forEach(input => input.disable());
+    this.clientBookingInputs.forEach(input => this.bookingsForm.get(input).disable());
   }
 
   private _enableInputsByBookingType() {
-    this.clientBookingInputs.forEach(input => input.enable());
+    this.clientBookingInputs.forEach(input => this.bookingsForm.get(input).enable());
   }
 
   // Example on how to go about to auto fill other form inputs after autocomplete selection
