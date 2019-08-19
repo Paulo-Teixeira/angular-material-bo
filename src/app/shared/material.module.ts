@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -15,10 +15,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   imports: [
     MatAutocompleteModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatRadioModule,
     MatSidenavModule,
     MatSlideToggleModule,
     MatSnackBarModule,
@@ -27,10 +27,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   exports: [
     MatAutocompleteModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatRadioModule,
     MatSidenavModule,
     MatSlideToggleModule,
     MatSnackBarModule,
