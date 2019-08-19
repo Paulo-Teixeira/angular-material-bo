@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatButtonToggleGroup } from '@angular/material/button-toggle';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
-import { MatRadioChange } from '@angular/material/radio';
 
 
 @Component({
@@ -128,7 +128,7 @@ export class BookingFormComponent implements OnInit {
     return {...formData, ...trimmedFormData};
   }
 
-  toggleInputsByTypeOfBooking(event: MatRadioChange): void {
+  toggleInputsByTypeOfBooking(event: MatButtonToggleGroup): void {
     const bookingType = event.value;
 
     if (bookingType === 1) {

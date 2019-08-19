@@ -2,12 +2,12 @@
 
 <form [formGroup]="bookingsForm" novalidate class="booking-form">
 
-  <div class="booking-form__radio-group">
-    <label for="radio-group" class="booking-form__radio-label">Booking type</label>
-    <mat-radio-group aria-labelledby="radio-group" formControlName="bookingType" (change)="toggleInputsByTypeOfBooking($event)">
-      <mat-radio-button [value]="1" class="booking-form__radio-button">Option 1</mat-radio-button>
-      <mat-radio-button [value]="2" class="booking-form__radio-button">Option 2</mat-radio-button>
-    </mat-radio-group>
+  <div class="booking-form__toggle-group">
+    <label for="btn-toggle-group" class="booking-form__toggle-label">Booking type</label>
+    <mat-button-toggle-group #bookingType="matButtonToggleGroup" class="booking-form__toggle-buttons" aria-labelledby="btn-toggle-group" formControlName="bookingType" (change)="toggleInputsByTypeOfBooking(bookingType)">
+      <mat-button-toggle class="booking-form__toggle-button" [value]="1">Option 1</mat-button-toggle>
+      <mat-button-toggle class="booking-form__toggle-button" [value]="2">Option 2</mat-button-toggle>
+    </mat-button-toggle-group>
   </div>
 
   <mat-form-field *ngIf="isClientBooking" [hideRequiredMarker]="false" appearance="outline">
@@ -55,12 +55,12 @@
     <mat-error>Transit label is <strong>required</strong></mat-error>
   </mat-form-field>
 
-  <div *ngIf="isClientBooking" class="booking-form__radio-group">
-    <label for="radio-group" class="booking-form__radio-label">Payment type</label>
-    <mat-radio-group aria-labelledby="radio-group" formControlName="paymentType">
-      <mat-radio-button [value]="1" class="booking-form__radio-button">Option 1</mat-radio-button>
-      <mat-radio-button [value]="2" class="booking-form__radio-button">Option 2</mat-radio-button>
-    </mat-radio-group>
+  <div *ngIf="isClientBooking" class="booking-form__toggle-group">
+    <label for="btn-toggle-group" class="booking-form__toggle-label">Payment type</label>
+    <mat-button-toggle-group class="booking-form__toggle-buttons" aria-labelledby="btn-toggle-group" formControlName="paymentType">
+      <mat-button-toggle class="booking-form__toggle-button" [value]="1">Option 1</mat-button-toggle>
+      <mat-button-toggle class="booking-form__toggle-button" [value]="2">Option 2</mat-button-toggle>
+    </mat-button-toggle-group>
   </div>
 
   <mat-form-field *ngIf="isClientBooking" appearance="outline">

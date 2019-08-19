@@ -7,16 +7,22 @@
   grid-template-rows: repeat(2, 1fr);
   padding: 48px;
 
-  &__radio-label {
+  &__toggle-group {
+    align-items: center;
+    display: flex;
+  }
+
+  &__toggle-label {
+    flex-shrink: 0;
     margin-right: 16px;
   }
 
-  &__radio-button {
-    margin-right: 16px;
-    
-    &:last-child {
-      margin-right: 0;
-    }
+  &__toggle-buttons {
+    flex-basis: 100%;
+  }
+
+  &__toggle-button {
+    flex-grow: 1;
   }
 
   &__input-button {
