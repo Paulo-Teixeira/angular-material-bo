@@ -76,9 +76,11 @@ export class BookingFormComponent implements OnInit {
 
       this.bookingsForm.reset();
       
-      // Sets de default value of the radio button to the last value submited before form reset
+      // Sets default values for form controls after form reset
       this.bookingsForm.patchValue({bookingType: lastSubmitedBookingType});
       this.bookingsForm.patchValue({paymentType: lastSubmitedPaymentType});
+      this.bookingsForm.patchValue({idaToggle: false});
+      this.bookingsForm.patchValue({idbToggle: false});
     }
   }
 
