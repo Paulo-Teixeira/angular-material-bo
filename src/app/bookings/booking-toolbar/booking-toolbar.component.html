@@ -1,29 +1,29 @@
 <mat-toolbar class="booking-toolbar">
 
-    <div class="booking-toolbar__meta">
-      <span class="booking-toolbar__meta-label mat-h4">Label:</span>
-      <span class="booking-toolbar__meta-value mat-h4">Value</span>
-    </div>
-    <div class="booking-toolbar__meta booking-toolbar__meta--push-right">
-      <span class="booking-toolbar__meta-label mat-h4">Label:</span>
-      <span class="booking-toolbar__meta-value mat-h4">Value</span>
-    </div>
-    
-    <button mat-button color="primary" type="button" [disabled]="isFormValid">
-      <mat-icon aria-hidden="false">done_outline</mat-icon>
-      <span class="booking-toolbar__button-label">Confirmer + OT</span>
-    </button>
-    <button mat-button color="primary" type="button" [disabled]="isFormValid">
-      <mat-icon aria-hidden="false">done_outline</mat-icon>
-      <span class="booking-toolbar__button-label">Confirmer + MAD</span>
-    </button>
-    <button mat-button color="primary" type="button" (click)="submitForm()" [disabled]="isFormValid">
-      <mat-icon aria-hidden="false">done_outline</mat-icon>
-      <span class="booking-toolbar__button-label">Confirmer</span>
-    </button>
-    <button mat-button color="primary" type="button">
-      <mat-icon aria-hidden="false">save_outline</mat-icon>
-      <span class="booking-toolbar__button-label">Sauvegarder</span>
-    </button>
-    
+  <div class="booking-toolbar__meta">
+    <span class="booking-toolbar__meta-label mat-h4">Label:</span>
+    <span class="booking-toolbar__meta-value mat-h4">Value</span>
+  </div>
+  <div class="booking-toolbar__meta booking-toolbar__meta--push-right">
+    <span class="booking-toolbar__meta-label mat-h4">Label:</span>
+    <span class="booking-toolbar__meta-value mat-h4">Value</span>
+  </div>
+
+  <button mat-button color="primary" type="button" [disabled]="isFormValid">
+    <mat-icon aria-hidden="false">done_outline</mat-icon>
+    <span class="booking-toolbar__button-label">Confirm + OT</span>
+  </button>
+  <button mat-button color="primary" type="button" [disabled]="isFormValid">
+    <mat-icon aria-hidden="false">done_outline</mat-icon>
+    <span class="booking-toolbar__button-label">Confirm + MAD</span>
+  </button>
+  <button mat-button color="primary" type="button" (click)="submitForm()" [disabled]="isFormValid">
+    <mat-icon aria-hidden="false">done_outline</mat-icon>
+    <span class="booking-toolbar__button-label">Confirm</span>
+  </button>
+  <button mat-button color="primary" type="button">
+    <mat-icon aria-hidden="false">save_outline</mat-icon>
+    <span class="booking-toolbar__button-label">Save</span>
+  </button>
+
 </mat-toolbar>
