@@ -1,5 +1,7 @@
 # AngularMaterialBo
 
+Implements a basic app with a lazy loaded module containing a header component and a complex functional reactive form component. Also uses Angular material UI framework.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
 ## Development server
